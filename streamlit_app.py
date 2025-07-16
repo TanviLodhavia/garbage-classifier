@@ -8,7 +8,7 @@ import os
 @st.cache_resource
 def load_model():
     model = tf.keras.models.load_model("garbage_classifier_model.keras")
-    class_names = sorted(os.listdir("dataset"))  # Assumes dataset/ contains class folders
+    class_names = ['cardboard', 'glass', 'metal', 'paper', 'plastic', 'trash']  # Assumes dataset/ contains class folders
     return model, class_names
 
 model, class_names = load_model()
